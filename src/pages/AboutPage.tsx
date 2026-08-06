@@ -52,7 +52,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAirbnb }) => {
           <div className="lg:col-span-5 relative">
             <div className="rounded-2xl overflow-hidden border border-amber-400/30 shadow-2xl aspect-square relative">
               <img
-                src={imageFor("https://lh3.googleusercontent.com/pw/AP1GczPy0d43HEpcsXcNXE63fVH_GayjLjJPodXncTe6VNVo4DaRj_47sktozXglTWFS_LLTGWhLZMLu9qBxJUtiqWYM8_PZfxfKfRCa_3_1sgFhSawjf04=w1600")}
+                src={imageFor('about-feature', "https://lh3.googleusercontent.com/pw/AP1GczPy0d43HEpcsXcNXE63fVH_GayjLjJPodXncTe6VNVo4DaRj_47sktozXglTWFS_LLTGWhLZMLu9qBxJUtiqWYM8_PZfxfKfRCa_3_1sgFhSawjf04=w1600")}
                 alt="Cliff House at Canyon Lake waterfront property"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

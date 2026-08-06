@@ -39,7 +39,7 @@ export const SleepingArrangements: React.FC = () => {
               {/* Room Image */}
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
-                  src={imageFor(room.image)}
+                  src={imageFor(`bedroom-${idx + 1}`, room.image)}
                   alt={room.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"

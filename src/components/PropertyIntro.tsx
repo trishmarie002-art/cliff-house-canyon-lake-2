@@ -60,7 +60,7 @@ export const PropertyIntro: React.FC = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/15 aspect-[16/10]">
               <img
-                src={imageFor("https://lh3.googleusercontent.com/pw/AP1GczNlEWpJDnDAft8suKPW24x5sOAq3rWJK5J4R6oYKs1LBQ3J2TdjywSmNH2heupJftiFvcUl6nuE90PjPpXRE5xQGzMJFeYjM9KuwSZxg5cDgtz44mo=w1600")}
+                src={imageFor('intro-main', "https://lh3.googleusercontent.com/pw/AP1GczNlEWpJDnDAft8suKPW24x5sOAq3rWJK5J4R6oYKs1LBQ3J2TdjywSmNH2heupJftiFvcUl6nuE90PjPpXRE5xQGzMJFeYjM9KuwSZxg5cDgtz44mo=w1600")}
                 alt="Cliff House at Canyon Lake exterior and deck view"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -82,7 +82,7 @@ export const PropertyIntro: React.FC = () => {
             {/* Floating Overlapping Small Image */}
             <div className="hidden sm:block absolute -bottom-8 -left-8 w-48 h-48 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-2xl z-10">
               <img
-                src={imageFor("https://lh3.googleusercontent.com/pw/AP1GczPyxq_KEYCUIMnT4ho-rJZ6Mm9oiHAieb-Qm0YbF5yFAMVwH9G50mibQUMUB-iT9KvwG4tN8d1aMVK9-GQ_-T3FZxyzKRbawFBXtkxk9AMvSb2Fc8s=w1600")}
+                src={imageFor('intro-accent', "https://lh3.googleusercontent.com/pw/AP1GczPyxq_KEYCUIMnT4ho-rJZ6Mm9oiHAieb-Qm0YbF5yFAMVwH9G50mibQUMUB-iT9KvwG4tN8d1aMVK9-GQ_-T3FZxyzKRbawFBXtkxk9AMvSb2Fc8s=w1600")}
                 alt="Cliff House outdoor hot tub view"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

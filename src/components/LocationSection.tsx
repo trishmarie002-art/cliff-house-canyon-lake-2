@@ -92,7 +92,7 @@ export const LocationSection: React.FC = () => {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={imageFor(spot.image)}
+                  src={imageFor(`location-${spot.id}`, spot.image)}
                   alt={spot.name}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                   referrerPolicy="no-referrer"

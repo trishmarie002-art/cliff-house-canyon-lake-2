@@ -17,7 +17,7 @@ export const StoryHighlights: React.FC = () => {
         "Minutes from Canyon Lake Marina & boat launching ramps",
         "Paddleboards and water floats available for guests"
       ],
-      image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg",
+      image: "https://lh3.googleusercontent.com/pw/AP1GczNRQIPR_AUH5tZY1tKBIufjvA9MtUmPeDi5UGs4Opr26eMhgIguYPgV0BiI358Q85Lf6FtGPDAYFQkrZ9ED2OQBxPJAfbPRlYCJx44cbKWx_2DBX2Y=w1600",
       imageAlt: "Direct lake water access at Canyon Lake",
       reversed: false,
     },
@@ -34,7 +34,7 @@ export const StoryHighlights: React.FC = () => {
         "Lounge armchairs & coffee table for quiet mornings",
         "Covered shade areas for comfortable afternoon lounging"
       ],
-      image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg",
+      image: "https://lh3.googleusercontent.com/pw/AP1GczO_KkzDH1ir-bZ_E5BsMHLZ6yPT1-_TcWtU74XkzhKS0qP3XyMHBDZYOBM0-nq18L5ee4zDPHGLKamuDwMexn88051BuKHiIrfn1PxBlc-3a7--Uus=w1600",
       imageAlt: "Upper deck at Cliff House overlooking Canyon Lake sunset",
       reversed: true,
     },
@@ -51,7 +51,7 @@ export const StoryHighlights: React.FC = () => {
         "Surrounded by cedar trees and panoramic lake views",
         "Privately positioned on the lower secluded deck"
       ],
-      image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a675ff01-d780-4db9-a590-f66aec4459c4.jpeg",
+      image: "https://lh3.googleusercontent.com/pw/AP1GczNlEWpJDnDAft8suKPW24x5sOAq3rWJK5J4R6oYKs1LBQ3J2TdjywSmNH2heupJftiFvcUl6nuE90PjPpXRE5xQGzMJFeYjM9KuwSZxg5cDgtz44mo=w1600",
       imageAlt: "Private hot tub at Cliff House with lake view",
       reversed: false,
     },
@@ -68,7 +68,7 @@ export const StoryHighlights: React.FC = () => {
         "Outdoor string lights creating a magical night vibe",
         "Complementary fire wood starter kit provided"
       ],
-      image: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/b9b036ac-f18c-46c2-a271-e34f7ff98c16.jpeg",
+      image: "https://lh3.googleusercontent.com/pw/AP1GczPyxq_KEYCUIMnT4ho-rJZ6Mm9oiHAieb-Qm0YbF5yFAMVwH9G50mibQUMUB-iT9KvwG4tN8d1aMVK9-GQ_-T3FZxyzKRbawFBXtkxk9AMvSb2Fc8s=w1600",
       imageAlt: "Waterfront firepit and outdoor grill area",
       reversed: true,
     }

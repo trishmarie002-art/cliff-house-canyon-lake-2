@@ -18,14 +18,14 @@ const emptyContent: SiteContent = {
 
 interface SiteContentValue extends SiteContent {
   loading: boolean;
-  imageFor: (original: string) => string;
+  imageFor: (slotId: string, fallback?: string) => string;
   galleryImages: GalleryImage[];
 }
 
 const SiteContentContext = createContext<SiteContentValue>({
   ...emptyContent,
   loading: true,
-  imageFor: (original) => original,
+  imageFor: (slotId, fallback) => fallback ?? slotId,
   galleryImages: GALLERY_IMAGES,
 });
 
@@ -52,13 +52,17 @@ export const SiteContentProvider: React.FC<React.PropsWithChildren> = ({ childre
   }, []);
 
   const value = useMemo<SiteContentValue>(() => {
-    const imageFor = (original: string) => content.imageOverrides[original] || original;
+    const imageFor = (slotId: string, fallback?: string) =>
+      content.imageOverrides[slotId] || (fallback ? content.imageOverrides[fallback] : undefined) || fallback || slotId;
     const galleryImages = [
       ...GALLERY_IMAGES.filter((image) => !content.hiddenGalleryIds.includes(image.id)).map((image) => ({
         ...image,
-        src: imageFor(image.src),
+        src: imageFor(`gallery-${image.id}`, image.src),
       })),
-      ...content.galleryAdditions,
+      ...content.galleryAdditions.map((image) => ({
+        ...image,
+        src: imageFor(`gallery-${image.id}`, image.src),
+      })),
     ];
 
     return { ...content, loading, imageFor, galleryImages };
@@ -68,4 +72,3 @@ export const SiteContentProvider: React.FC<React.PropsWithChildren> = ({ childre
 };
 
 export const useSiteContent = () => useContext(SiteContentContext);
-

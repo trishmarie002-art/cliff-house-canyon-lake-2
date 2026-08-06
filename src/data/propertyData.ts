@@ -20,7 +20,7 @@ export const PROPERTY_INFO: PropertyInfo = {
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: "hero-view",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczMvwXt4uhGX5rgx_sFDI1dSMmpfXrodCt_7lYV5mLmv-kepNvqp1QqQIKkvABD5XR7ImroYEdZofV2jLvJ-LjxmQllfsFNOORUlpJ49zSXeNbcLfqw=w1600",
     alt: "Panoramic multi-level cliffside decks overlooking turquoise water at Canyon Lake",
     title: "Cliffside Waterfront Exterior & Decks",
     category: "views",
@@ -28,7 +28,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "sunset-deck",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczNRQIPR_AUH5tZY1tKBIufjvA9MtUmPeDi5UGs4Opr26eMhgIguYPgV0BiI358Q85Lf6FtGPDAYFQkrZ9ED2OQBxPJAfbPRlYCJx44cbKWx_2DBX2Y=w1600",
     alt: "Upper deck lounge with sunset views over Canyon Lake",
     title: "Golden Hour on Upper Sunset Deck",
     category: "views",
@@ -36,7 +36,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "private-hot-tub",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a675ff01-d780-4db9-a590-f66aec4459c4.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczM_7LM5iPOobOQ6tYttoS7YDHfwcOMm16FYsyrTzqFdmIuQAEgRmDykxxyvAFHLS_W40SDrelzQl7I4nluoYfvq_Ck5ddk7VVX7KwUFPOuTuXGMEyM=w1600",
     alt: "Private hot tub on lower deck lit by string lights with lake views",
     title: "Cliffside Hot Tub & Spa",
     category: "outdoor",
@@ -44,7 +44,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "living-room",
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/b9b036ac-f18c-46c2-a271-e34f7ff98c16.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPjYOHi5XioQJOFUi9tyzIa9b2a2NJykVpdfolfYyVxDfCx8LmJ8jRQwXo3_xc18m1Qi31U7EgC-x1o3jz7fW9of1PAEz5GSQYcOYhgTYmlrJTKZBE=w1600",
     alt: "Spacious open living room with floor-to-ceiling windows showing water",
     title: "Open-Concept Grand Living Area",
     category: "interior",
@@ -52,7 +52,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "kitchen-dining",
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/857113a1-8546-4f68-915b-113461b88eec.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczMo-iIxVyVZjXv1yeXPpfO5icjLnw1Kw7hG-ryfbk3NW5V_eyO3TynAn2TPvz8Js5Vh-9A23dU7k5NTzS5e36UUW1B3DzgdpaF16MsKZbtyvR7kXpY=w1600",
     alt: "Gourmet kitchen with island, stainless steel appliances, and lake views",
     title: "Fully Equipped Gourmet Kitchen",
     category: "interior",
@@ -60,7 +60,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "firepit-lakeside",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczP0uLcO-R2Sbupc1JclMWeCVLRefEXW7HWCyhtYvG-y_3X7FHVHOkZSgvtqw3JR0213JaqpaglsiVRJ7xYwCvkW-QDH2FhRlGp3QtpnpRyrTvwkQ74=w1600",
     alt: "Lakeside firepit with Adirondack seating overlooking Canyon Lake water",
     title: "Waterfront Firepit & Stargazing Lounge",
     category: "outdoor",
@@ -68,7 +68,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "master-bedroom",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczO_KkzDH1ir-bZ_E5BsMHLZ6yPT1-_TcWtU74XkzhKS0qP3XyMHBDZYOBM0-nq18L5ee4zDPHGLKamuDwMexn88051BuKHiIrfn1PxBlc-3a7--Uus=w1600",
     alt: "Primary suite with King bed, crisp linens, and lakefront deck access",
     title: "Primary King Suite with Deck Access",
     category: "bedrooms",
@@ -76,7 +76,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "bedroom-2",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a675ff01-d780-4db9-a590-f66aec4459c4.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczNKl6eoLOfHpLqB1r2dXXCnk6U8aBNM0-NMQiVCYYRO92oi-LpTTsqHeB8RFm-40LhoAmJnvPS-y_MD2babA-1CS6HfP_FTCN1iUHjsCpx2DhVto9E=w1600",
     alt: "Second bedroom with Queen bed and stylish Texas Hill Country accent decor",
     title: "Guest Room 2 (Queen Bed)",
     category: "bedrooms",
@@ -84,7 +84,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "bedroom-bunks",
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/b9b036ac-f18c-46c2-a271-e34f7ff98c16.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczNlEWpJDnDAft8suKPW24x5sOAq3rWJK5J4R6oYKs1LBQ3J2TdjywSmNH2heupJftiFvcUl6nuE90PjPpXRE5xQGzMJFeYjM9KuwSZxg5cDgtz44mo=w1600",
     alt: "Third bedroom with comfortable multi-bed bunk setup for family & friends",
     title: "Bunk Suite (Multiple Beds for Groups)",
     category: "bedrooms",
@@ -92,7 +92,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "outdoor-dining",
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/857113a1-8546-4f68-915b-113461b88eec.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPyxq_KEYCUIMnT4ho-rJZ6Mm9oiHAieb-Qm0YbF5yFAMVwH9G50mibQUMUB-iT9KvwG4tN8d1aMVK9-GQ_-T3FZxyzKRbawFBXtkxk9AMvSb2Fc8s=w1600",
     alt: "Al fresco outdoor dining table set on deck overlooking turquoise water",
     title: "Al Fresco Deck Dining",
     category: "outdoor",
@@ -100,7 +100,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "grill-station",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczN1VQ24rj6CsSKooOVfDCX604KhCaVEGtGyJ38zvIG2asTzxfvMVF8BGTLIMNclo6PqucmPIdkxQ0-FWGrg4ygygKdna_hH0_tqCvkHVFGw_xA-dp0=w1600",
     alt: "Outdoor barbecue station on deck next to outdoor lounge",
     title: "Outdoor Grill & Barbecue Station",
     category: "outdoor",
@@ -108,7 +108,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "bathroom-master",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPy0d43HEpcsXcNXE63fVH_GayjLjJPodXncTe6VNVo4DaRj_47sktozXglTWFS_LLTGWhLZMLu9qBxJUtiqWYM8_PZfxfKfRCa_3_1sgFhSawjf04=w1600",
     alt: "Modern bathroom with walk-in glass shower and dual vanity",
     title: "Luxury Bathroom Suite",
     category: "interior",
@@ -116,7 +116,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "lake-water-access",
-    src: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a675ff01-d780-4db9-a590-f66aec4459c4.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczOB3E-vjq60fjYYGJpICbmtisRaMloikXSsf3IPzzDCVJF_rXGpNgErLVRJf5wKtjrRCtuqDDYA4TVa7L7TVBBpHyWeGgnNZpJMfiGLdR_BkrUkL_0=w1600",
     alt: "Direct waterfront line and turquoise crystal clear water at Canyon Lake",
     title: "Direct Canyon Lake Water Access",
     category: "views",
@@ -124,7 +124,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "coffee-bar",
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/b9b036ac-f18c-46c2-a271-e34f7ff98c16.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczNI3iljSV3yqsGJ1UHJNEw-LMuIWtRj-L6OuVQVByKJlQyJww_yPVrDGPuheLiCRoP5Lh53gA0Eq_nREdc9aSHf8kOUp7xfgfhdH22PjZe3hoGPzJU=w1600",
     alt: "Morning coffee station in gourmet kitchen",
     title: "Complimentary Coffee & Tea Bar",
     category: "interior",
@@ -132,7 +132,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   },
   {
     id: "sunset-water",
-    src: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/857113a1-8546-4f68-915b-113461b88eec.jpeg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPWTFAfqN9Dau2UrkxmNzCff5isFtWY-9jx1xGVjQ7_SXiw5Gy6d-DPiwrRYLEuOOyYosm7Nj3jfTwZbFSXL702mttaCl03v6imlVl8bgDvi3UasEg=w1600",
     alt: "Stunning Texas Hill Country sunset over calm lake waters",
     title: "Hill Country Sunset Horizons",
     category: "views",
@@ -147,7 +147,7 @@ export const BEDROOMS_DATA: BedroomLayout[] = [
     subtitle: "Upper Level • Waterfront View",
     beds: ["1 King Bed"],
     capacity: 2,
-    image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg",
+    image: "https://lh3.googleusercontent.com/pw/AP1GczMvwXt4uhGX5rgx_sFDI1dSMmpfXrodCt_7lYV5mLmv-kepNvqp1QqQIKkvABD5XR7ImroYEdZofV2jLvJ-LjxmQllfsFNOORUlpJ49zSXeNbcLfqw=w1600",
     features: ["Private slider deck access", "En-suite bathroom", "Ultra-plush mattress", "Blackout shades", "HD Smart TV"],
   },
   {
@@ -156,7 +156,7 @@ export const BEDROOMS_DATA: BedroomLayout[] = [
     subtitle: "Main Level • Serene Wooded View",
     beds: ["1 Queen Bed", "1 Twin Daybed"],
     capacity: 3,
-    image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg",
+    image: "https://lh3.googleusercontent.com/pw/AP1GczNRQIPR_AUH5tZY1tKBIufjvA9MtUmPeDi5UGs4Opr26eMhgIguYPgV0BiI358Q85Lf6FtGPDAYFQkrZ9ED2OQBxPJAfbPRlYCJx44cbKWx_2DBX2Y=w1600",
     features: ["Premium memory foam mattress", "Direct access to full bathroom", "Spacious closet space", "Reading nook"],
   },
   {
@@ -165,7 +165,7 @@ export const BEDROOMS_DATA: BedroomLayout[] = [
     subtitle: "Lower Level • Ideal for Families & Friends",
     beds: ["1 Queen Bed", "2 Twin Bunks", "1 Trundle"],
     capacity: 5,
-    image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a675ff01-d780-4db9-a590-f66aec4459c4.jpeg",
+    image: "https://lh3.googleusercontent.com/pw/AP1GczM_7LM5iPOobOQ6tYttoS7YDHfwcOMm16FYsyrTzqFdmIuQAEgRmDykxxyvAFHLS_W40SDrelzQl7I4nluoYfvq_Ck5ddk7VVX7KwUFPOuTuXGMEyM=w1600",
     features: ["4 Total Beds", "High-capacity sleeping", "Board game library", "Adjacent to lower hot tub deck"],
   },
 ];
@@ -266,7 +266,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     category: "water",
     distance: "5 min drive (2.1 miles)",
     description: "Rent pontoon boats, jet skis, kayak, or paddleboards for a day on the crystal blue reservoir.",
-    image: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/b9b036ac-f18c-46c2-a271-e34f7ff98c16.jpeg"
+    image: "https://lh3.googleusercontent.com/pw/AP1GczPjYOHi5XioQJOFUi9tyzIa9b2a2NJykVpdfolfYyVxDfCx8LmJ8jRQwXo3_xc18m1Qi31U7EgC-x1o3jz7fW9of1PAEz5GSQYcOYhgTYmlrJTKZBE=w1600"
   },
   {
     id: "guadalupe-tubing",
@@ -274,7 +274,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     category: "water",
     distance: "10 min drive (5.4 miles)",
     description: "The classic Texas Hill Country tradition! Float down the cool waters of the Guadalupe River.",
-    image: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/857113a1-8546-4f68-915b-113461b88eec.jpeg"
+    image: "https://lh3.googleusercontent.com/pw/AP1GczMo-iIxVyVZjXv1yeXPpfO5icjLnw1Kw7hG-ryfbk3NW5V_eyO3TynAn2TPvz8Js5Vh-9A23dU7k5NTzS5e36UUW1B3DzgdpaF16MsKZbtyvR7kXpY=w1600"
   },
   {
     id: "whitewater-amphitheater",
@@ -282,7 +282,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     category: "entertainment",
     distance: "12 min drive (6.8 miles)",
     description: "Iconic outdoor music venue right on the Guadalupe River featuring major national artists.",
-    image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg"
+    image: "https://lh3.googleusercontent.com/pw/AP1GczP0uLcO-R2Sbupc1JclMWeCVLRefEXW7HWCyhtYvG-y_3X7FHVHOkZSgvtqw3JR0213JaqpaglsiVRJ7xYwCvkW-QDH2FhRlGp3QtpnpRyrTvwkQ74=w1600"
   },
   {
     id: "overlook-park",
@@ -290,7 +290,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     category: "nature",
     distance: "8 min drive (4.2 miles)",
     description: "Walk across the massive dam with sweeping views of the lake spillway and limestone cliffs.",
-    image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg"
+    image: "https://lh3.googleusercontent.com/pw/AP1GczO_KkzDH1ir-bZ_E5BsMHLZ6yPT1-_TcWtU74XkzhKS0qP3XyMHBDZYOBM0-nq18L5ee4zDPHGLKamuDwMexn88051BuKHiIrfn1PxBlc-3a7--Uus=w1600"
   },
   {
     id: "hill-country-wineries",
@@ -298,7 +298,7 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
     category: "dining",
     distance: "15 min drive (10.5 miles)",
     description: "Discover local Texas boutique wineries, craft breweries, and authentic Hill Country barbecue spots.",
-    image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a675ff01-d780-4db9-a590-f66aec4459c4.jpeg"
+    image: "https://lh3.googleusercontent.com/pw/AP1GczNKl6eoLOfHpLqB1r2dXXCnk6U8aBNM0-NMQiVCYYRO92oi-LpTTsqHeB8RFm-40LhoAmJnvPS-y_MD2babA-1CS6HfP_FTCN1iUHjsCpx2DhVto9E=w1600"
   }
 ];
 

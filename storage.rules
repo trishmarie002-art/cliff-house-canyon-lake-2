@@ -5,9 +5,9 @@ service firebase.storage {
       allow read: if true;
       allow write: if request.auth != null
         && request.auth.token.email == 'trishmariedigital@gmail.com'
+        && request.auth.token.email_verified == true
         && request.resource.size < 10 * 1024 * 1024
         && request.resource.contentType.matches('image/.*');
     }
   }
 }
-

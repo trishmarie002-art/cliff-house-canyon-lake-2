@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { onAuthStateChanged, signInWithEmailAndPassword, signOut, type User } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut, type User } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { ArrowLeft, ImagePlus, Loader2, LogOut, Save, ShieldCheck, Trash2, Upload } from 'lucide-react';
@@ -24,6 +24,7 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
   const [authLoading, setAuthLoading] = useState(true);
   const [email, setEmail] = useState(ADMIN_EMAIL);
   const [password, setPassword] = useState('');
+  const [createMode, setCreateMode] = useState(false);
   const [draft, setDraft] = useState<SiteContent>({ imageOverrides: {}, galleryAdditions: [], hiddenGalleryIds: [] });
   const [busyKey, setBusyKey] = useState<string | null>(null);
   const [message, setMessage] = useState('');
@@ -80,6 +81,16 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
     }
   };
 
+  const replaceImageWithUrl = async (original: string) => {
+    const url = window.prompt('Paste a public image URL:');
+    if (!url?.trim()) return;
+    try {
+      await persist({ ...draft, imageOverrides: { ...draft.imageOverrides, [original]: url.trim() } }, 'Image updated across the website.');
+    } catch (saveError) {
+      setError(friendlyFirebaseError(saveError));
+    }
+  };
+
   const addGalleryPhoto = async (file?: File) => {
     if (!file) return;
     if (!newPhoto.title.trim()) {
@@ -124,20 +135,34 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
       <div className="min-h-screen bg-[#091726] text-white grid place-items-center px-4">
         <form className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl" onSubmit={async (event) => {
           event.preventDefault(); setError('');
-          try { await signInWithEmailAndPassword(auth, email, password); }
+          try {
+            if (createMode) {
+              if (email.toLowerCase() !== ADMIN_EMAIL) throw new Error('Use the authorized admin email address.');
+              const credential = await createUserWithEmailAndPassword(auth, email, password);
+              await sendEmailVerification(credential.user);
+              await signOut(auth);
+              setCreateMode(false);
+              setPassword('');
+              setMessage('Account created. Check your email, verify it, then sign in.');
+            } else {
+              await signInWithEmailAndPassword(auth, email, password);
+            }
+          }
           catch (signInError) { setError(friendlyFirebaseError(signInError)); }
         }}>
           <button type="button" onClick={onExit} className="text-sm text-slate-300 hover:text-white flex items-center gap-2 mb-8"><ArrowLeft className="w-4 h-4" /> Back to website</button>
           <ShieldCheck className="w-10 h-10 text-amber-400 mb-4" />
-          <h1 className="font-serif-heading text-4xl mb-2">Site Admin</h1>
-          <p className="text-slate-400 mb-8">Sign in to update the property photos and gallery.</p>
+          <h1 className="font-serif-heading text-4xl mb-2">{createMode ? 'Create Admin Account' : 'Site Admin'}</h1>
+          <p className="text-slate-400 mb-8">{createMode ? 'Set your password, then verify the email we send you.' : 'Sign in to update the property photos and gallery.'}</p>
           <label className="block text-sm text-slate-300 mb-2">Admin email</label>
           <input className="w-full rounded-xl bg-slate-950/60 border border-white/15 px-4 py-3 mb-5" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           <label className="block text-sm text-slate-300 mb-2">Password</label>
           <input className="w-full rounded-xl bg-slate-950/60 border border-white/15 px-4 py-3 mb-3" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <a className="text-xs text-amber-300 hover:text-amber-200" href="https://cliff-house-canyon-lake.firebaseapp.com/__/auth/action" target="_blank" rel="noreferrer">Password help</a>
+          {message && <p className="mt-4 text-sm text-emerald-300">{message}</p>}
           {error && <p className="mt-4 text-sm text-red-300">{error}</p>}
-          <button className="w-full mt-6 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3">Sign in</button>
+          <button className="w-full mt-6 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3">{createMode ? 'Create account' : 'Sign in'}</button>
+          <button type="button" onClick={() => { setCreateMode(!createMode); setError(''); setMessage(''); }} className="w-full mt-3 text-sm text-amber-300 hover:text-amber-200">{createMode ? 'I already have an account' : 'First time here? Create admin account'}</button>
           <p className="text-xs text-slate-500 mt-5">Only the authorized owner account can save changes.</p>
         </form>
       </div>
@@ -146,6 +171,10 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
 
   if (user.email?.toLowerCase() !== ADMIN_EMAIL) {
     return <div className="min-h-screen bg-[#091726] text-white grid place-items-center px-4"><div className="text-center"><h1 className="text-3xl mb-3">Access denied</h1><p className="text-slate-400 mb-6">This account is not an authorized site administrator.</p><button onClick={() => signOut(auth)} className="px-5 py-3 rounded-xl bg-white/10">Sign out</button></div></div>;
+  }
+
+  if (!user.emailVerified) {
+    return <div className="min-h-screen bg-[#091726] text-white grid place-items-center px-4"><div className="max-w-md text-center"><ShieldCheck className="w-12 h-12 text-amber-400 mx-auto mb-4" /><h1 className="text-3xl mb-3">Verify your email</h1><p className="text-slate-400 mb-6">Open the verification email sent to {ADMIN_EMAIL}, then return and sign in again.</p><button onClick={() => signOut(auth)} className="px-5 py-3 rounded-xl bg-white/10">Back to sign in</button></div></div>;
   }
 
   const visibleDefaultGallery = GALLERY_IMAGES.filter((image) => !draft.hiddenGalleryIds.includes(image.id));
@@ -170,6 +199,7 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
                     {busyKey === image.src ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />} Replace image
                     <input type="file" accept="image/*" className="sr-only" disabled={Boolean(busyKey)} onChange={(e) => replaceImage(image.src, e.target.files?.[0])} />
                   </label>
+                  <button onClick={() => replaceImageWithUrl(image.src)} className="ml-3 text-xs text-amber-300 hover:text-amber-200">Use image URL</button>
                   {draft.imageOverrides[image.src] && <button onClick={() => persist({ ...draft, imageOverrides: Object.fromEntries(Object.entries(draft.imageOverrides).filter(([key]) => key !== image.src)) }, 'Original image restored.')} className="ml-3 text-xs text-slate-300 hover:text-white">Restore original</button>}
                 </div>
               </article>
@@ -187,6 +217,14 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
               {busyKey === 'new-gallery' ? <Loader2 className="w-5 h-5 animate-spin" /> : <ImagePlus className="w-5 h-5" />} Choose & upload photo
               <input type="file" accept="image/*" className="sr-only" disabled={Boolean(busyKey)} onChange={(e) => addGalleryPhoto(e.target.files?.[0])} />
             </label>
+            <button onClick={async () => {
+              if (!newPhoto.title.trim()) { setError('Add a title first.'); return; }
+              const src = window.prompt('Paste a public image URL:');
+              if (!src?.trim()) return;
+              const photo: GalleryImage = { id: `custom-${Date.now()}`, src: src.trim(), title: newPhoto.title.trim(), alt: newPhoto.alt.trim() || newPhoto.title.trim(), category: newPhoto.category };
+              try { await persist({ ...draft, galleryAdditions: [...draft.galleryAdditions, photo] }, 'Photo added to the gallery.'); setNewPhoto({ title: '', alt: '', category: 'views' }); }
+              catch (saveError) { setError(friendlyFirebaseError(saveError)); }
+            }} className="md:col-start-3 rounded-xl border border-amber-400/30 text-amber-300 px-5 py-3 font-semibold">Add using image URL</button>
           </div>
         </section>
 
@@ -203,4 +241,3 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
     </div>
   );
 };
-

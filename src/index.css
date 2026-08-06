@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #f8f6f0;
+  color: #1a2332;
+}
+
+/* Custom luxury typography classes */
+.font-serif-heading {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.bg-lake-deep {
+  background-color: #0d2238;
+}
+
+.bg-lake-dark {
+  background-color: #091726;
+}
+
+.bg-teal-luxury {
+  background-color: #0b3c48;
+}
+
+.bg-ivory-warm {
+  background-color: #f8f6f0;
+}
+
+.bg-sandstone {
+  background-color: #eae3d2;
+}
+
+.text-gold-accent {
+  color: #d4af37;
+}
+
+.border-gold-accent {
+  border-color: #d4af37;
+}
+
+/* Glassmorphic elements */
+.glass-panel {
+  background: rgba(13, 34, 56, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(13, 34, 56, 0.08);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d2238;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3e60;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}

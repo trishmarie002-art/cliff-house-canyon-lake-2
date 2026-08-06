@@ -1,0 +1,6 @@
+{
+  "name": "Cliff House at Canyon Lake",
+  "description": "Luxury waterfront vacation rental website for Cliff House at Canyon Lake, Texas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

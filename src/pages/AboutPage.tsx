@@ -6,12 +6,14 @@ import { SleepingArrangements } from '../components/SleepingArrangements';
 import { AmenitiesGrid } from '../components/AmenitiesGrid';
 import { LocationSection } from '../components/LocationSection';
 import { ShieldCheck, Heart, Award, MapPin, Users, Bed, Bath, Sparkles, ExternalLink } from 'lucide-react';
+import { useSiteContent } from '../context/SiteContentContext';
 
 interface AboutPageProps {
   onOpenAirbnb: () => void;
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAirbnb }) => {
+  const { imageFor } = useSiteContent();
   return (
     <div className="pt-24 pb-16 bg-[#091726] text-slate-100 min-h-screen space-y-16">
       {/* Header Banner */}
@@ -50,7 +52,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAirbnb }) => {
           <div className="lg:col-span-5 relative">
             <div className="rounded-2xl overflow-hidden border border-amber-400/30 shadow-2xl aspect-square relative">
               <img
-                src="https://lh3.googleusercontent.com/pw/AP1GczPy0d43HEpcsXcNXE63fVH_GayjLjJPodXncTe6VNVo4DaRj_47sktozXglTWFS_LLTGWhLZMLu9qBxJUtiqWYM8_PZfxfKfRCa_3_1sgFhSawjf04=w1600"
+                src={imageFor("https://lh3.googleusercontent.com/pw/AP1GczPy0d43HEpcsXcNXE63fVH_GayjLjJPodXncTe6VNVo4DaRj_47sktozXglTWFS_LLTGWhLZMLu9qBxJUtiqWYM8_PZfxfKfRCa_3_1sgFhSawjf04=w1600")}
                 alt="Cliff House at Canyon Lake waterfront property"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

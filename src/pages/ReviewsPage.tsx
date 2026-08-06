@@ -168,7 +168,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
                     <div>
                       <h3 className="font-serif-heading text-lg font-bold text-white flex items-center gap-2">
                         {rev.author}
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400" title="Verified Airbnb Guest" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400" aria-label="Verified Airbnb Guest" />
                       </h3>
                       <p className="text-xs text-slate-400">
                         {rev.location} • <span className="text-amber-200">{rev.stayDate}</span>

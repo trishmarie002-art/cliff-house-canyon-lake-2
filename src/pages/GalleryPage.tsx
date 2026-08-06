@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { GALLERY_IMAGES } from '../data/propertyData';
+import { useSiteContent } from '../context/SiteContentContext';
 import { GalleryCategory } from '../types';
 import { Lightbox } from '../components/Lightbox';
 import { Camera, Maximize2, Sparkles, Filter, Shield, Heart, ExternalLink } from 'lucide-react';
@@ -10,19 +10,20 @@ interface GalleryPageProps {
 }
 
 export const GalleryPage: React.FC<GalleryPageProps> = ({ onOpenAirbnb }) => {
+  const { galleryImages } = useSiteContent();
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('all');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const categories: { key: GalleryCategory; label: string; count: number }[] = [
-    { key: 'all', label: 'All Property Photos', count: GALLERY_IMAGES.length },
-    { key: 'views', label: 'Views & Decks', count: GALLERY_IMAGES.filter((i) => i.category === 'views').length },
-    { key: 'interior', label: 'Living & Kitchen', count: GALLERY_IMAGES.filter((i) => i.category === 'interior').length },
-    { key: 'bedrooms', label: 'Bedrooms & Baths', count: GALLERY_IMAGES.filter((i) => i.category === 'bedrooms').length },
-    { key: 'outdoor', label: 'Hot Tub & Firepit', count: GALLERY_IMAGES.filter((i) => i.category === 'outdoor').length },
+    { key: 'all', label: 'All Property Photos', count: galleryImages.length },
+    { key: 'views', label: 'Views & Decks', count: galleryImages.filter((i) => i.category === 'views').length },
+    { key: 'interior', label: 'Living & Kitchen', count: galleryImages.filter((i) => i.category === 'interior').length },
+    { key: 'bedrooms', label: 'Bedrooms & Baths', count: galleryImages.filter((i) => i.category === 'bedrooms').length },
+    { key: 'outdoor', label: 'Hot Tub & Firepit', count: galleryImages.filter((i) => i.category === 'outdoor').length },
   ];
 
-  const filteredImages = GALLERY_IMAGES.filter(
+  const filteredImages = galleryImages.filter(
     (img) => activeCategory === 'all' || img.category === activeCategory
   );
 

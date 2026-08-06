@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Bed, Users, ShieldCheck, Sparkles, CheckCircle2, Bath } from 'lucide-react';
 import { BEDROOMS_DATA, PROPERTY_INFO } from '../data/propertyData';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export const SleepingArrangements: React.FC = () => {
+  const { imageFor } = useSiteContent();
   return (
     <section id="sleeping" className="py-20 sm:py-28 bg-[#0d2238] text-white relative overflow-hidden">
       {/* Background glow */}
@@ -37,7 +39,7 @@ export const SleepingArrangements: React.FC = () => {
               {/* Room Image */}
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
-                  src={room.image}
+                  src={imageFor(room.image)}
                   alt={room.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"

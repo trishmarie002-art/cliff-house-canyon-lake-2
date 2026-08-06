@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, ExternalLink, Star, Users, Bed, Bath, Sparkles, Shield, Anchor, Heart } from 'lucide-react';
 import { PROPERTY_INFO } from '../data/propertyData';
+import { useSiteContent } from '../context/SiteContentContext';
 
 interface HeroProps {
   onOpenAirbnb: () => void;
@@ -9,9 +10,10 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenAirbnb, ambiance }) => {
-  const bgImage = ambiance === 'sunset'
+  const { imageFor } = useSiteContent();
+  const bgImage = imageFor(ambiance === 'sunset'
     ? 'https://lh3.googleusercontent.com/pw/AP1GczMvwXt4uhGX5rgx_sFDI1dSMmpfXrodCt_7lYV5mLmv-kepNvqp1QqQIKkvABD5XR7ImroYEdZofV2jLvJ-LjxmQllfsFNOORUlpJ49zSXeNbcLfqw=w1600'
-    : 'https://lh3.googleusercontent.com/pw/AP1GczO_KkzDH1ir-bZ_E5BsMHLZ6yPT1-_TcWtU74XkzhKS0qP3XyMHBDZYOBM0-nq18L5ee4zDPHGLKamuDwMexn88051BuKHiIrfn1PxBlc-3a7--Uus=w1600';
+    : 'https://lh3.googleusercontent.com/pw/AP1GczO_KkzDH1ir-bZ_E5BsMHLZ6yPT1-_TcWtU74XkzhKS0qP3XyMHBDZYOBM0-nq18L5ee4zDPHGLKamuDwMexn88051BuKHiIrfn1PxBlc-3a7--Uus=w1600');
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">

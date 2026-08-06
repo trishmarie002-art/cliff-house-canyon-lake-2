@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Navigation, Compass, ExternalLink, Anchor, Music, Trees, Wine } from 'lucide-react';
 import { AREA_ATTRACTIONS, PROPERTY_INFO } from '../data/propertyData';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export const LocationSection: React.FC = () => {
+  const { imageFor } = useSiteContent();
   return (
     <section id="location" className="py-20 sm:py-28 bg-[#091726] text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,7 +92,7 @@ export const LocationSection: React.FC = () => {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={spot.image}
+                  src={imageFor(spot.image)}
                   alt={spot.name}
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                   referrerPolicy="no-referrer"

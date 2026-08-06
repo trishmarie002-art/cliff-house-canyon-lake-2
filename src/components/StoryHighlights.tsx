@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Waves, Sparkles, Flame, Sun, Utensils, Shield, Heart, Compass, Star } from 'lucide-react';
+import { useSiteContent } from '../context/SiteContentContext';
 
 export const StoryHighlights: React.FC = () => {
+  const { imageFor } = useSiteContent();
   const stories = [
     {
       id: "waterfront-access",
@@ -144,7 +146,7 @@ export const StoryHighlights: React.FC = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#0d2238]/10 group">
                   <img
-                    src={story.image}
+                    src={imageFor(story.image)}
                     alt={story.imageAlt}
                     className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"

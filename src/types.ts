@@ -1,4 +1,4 @@
-export type PageTab = 'home' | 'about' | 'gallery' | 'reviews' | 'calendar' | 'faq';
+export type PageTab = 'home' | 'about' | 'gallery' | 'reviews' | 'calendar' | 'faq' | 'admin';
 
 export interface PropertyInfo {
   name: string;

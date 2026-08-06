@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { GALLERY_IMAGES } from '../data/propertyData';
+import { useSiteContent } from '../context/SiteContentContext';
 import { GalleryCategory, GalleryImage } from '../types';
 import { Lightbox } from './Lightbox';
 import { Camera, Maximize2, Sparkles, Filter } from 'lucide-react';
 
 export const PhotoGallery: React.FC = () => {
+  const { galleryImages } = useSiteContent();
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('all');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -18,7 +19,7 @@ export const PhotoGallery: React.FC = () => {
     { key: 'outdoor', label: 'Hot Tub & Firepit' },
   ];
 
-  const filteredImages = GALLERY_IMAGES.filter(
+  const filteredImages = galleryImages.filter(
     (img) => activeCategory === 'all' || img.category === activeCategory
   );
 

@@ -2,9 +2,10 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut, type User } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { ArrowLeft, ImagePlus, Loader2, LogOut, Save, ShieldCheck, Trash2, Upload } from 'lucide-react';
+import { ArrowLeft, ImagePlus, Loader2, LogOut, ShieldCheck, Trash2, Upload } from 'lucide-react';
 import { auth, db, storage } from '../lib/firebase';
 import { GALLERY_IMAGES } from '../data/propertyData';
+import { SITE_IMAGE_SLOTS } from '../data/siteImageSlots';
 import { useSiteContent, type SiteContent } from '../context/SiteContentContext';
 import type { GalleryCategory, GalleryImage } from '../types';
 
@@ -46,10 +47,10 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
     }
   }, [live.loading]);
 
-  const uniqueDefaults = useMemo(() => {
-    const seen = new Set<string>();
-    return GALLERY_IMAGES.filter((image) => !seen.has(image.src) && Boolean(seen.add(image.src)));
-  }, []);
+  const slotsBySection = useMemo(() => Object.entries(SITE_IMAGE_SLOTS.reduce<Record<string, typeof SITE_IMAGE_SLOTS>>((groups, slot) => {
+    (groups[slot.section] ||= []).push(slot);
+    return groups;
+  }, {})), []);
 
   const persist = async (next: SiteContent, success: string) => {
     setError('');
@@ -189,21 +190,26 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
 
         <section>
           <h2 className="font-serif-heading text-3xl mb-2">Website images</h2>
-          <p className="text-slate-400 mb-7">Replace any image below and every place that uses it will update automatically.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {uniqueDefaults.map((image, index) => (
-              <article key={image.src} className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
-                <img src={draft.imageOverrides[image.src] || image.src} alt={image.alt} className="aspect-[4/3] w-full object-cover" referrerPolicy="no-referrer" />
-                <div className="p-4"><p className="font-medium mb-1">{image.title}</p><p className="text-xs text-slate-500 mb-4">Image slot {index + 1}</p>
+          <p className="text-slate-400 mb-7">Every section image has its own control. Replacing one changes only that exact spot on the website.</p>
+          <div className="space-y-10">
+            {slotsBySection.map(([section, slots]) => <div key={section}>
+              <h3 className="text-sm uppercase tracking-[.18em] text-amber-300 mb-4">{section}</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {slots.map((image) => (
+              <article key={image.id} className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+                <img src={draft.imageOverrides[image.id] || draft.imageOverrides[image.fallback] || image.fallback} alt={image.alt} className="aspect-[4/3] w-full object-cover" referrerPolicy="no-referrer" />
+                <div className="p-4"><p className="font-medium mb-1">{image.title}</p><p className="text-xs text-slate-500 mb-4">{image.section}</p>
                   <label className="cursor-pointer rounded-lg bg-amber-400 text-slate-950 font-bold text-sm px-4 py-2.5 inline-flex items-center gap-2">
-                    {busyKey === image.src ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />} Replace image
-                    <input type="file" accept="image/*" className="sr-only" disabled={Boolean(busyKey)} onChange={(e) => replaceImage(image.src, e.target.files?.[0])} />
+                    {busyKey === image.id ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />} Replace image
+                    <input type="file" accept="image/*" className="sr-only" disabled={Boolean(busyKey)} onChange={(e) => replaceImage(image.id, e.target.files?.[0])} />
                   </label>
-                  <button onClick={() => replaceImageWithUrl(image.src)} className="ml-3 text-xs text-amber-300 hover:text-amber-200">Use image URL</button>
-                  {draft.imageOverrides[image.src] && <button onClick={() => persist({ ...draft, imageOverrides: Object.fromEntries(Object.entries(draft.imageOverrides).filter(([key]) => key !== image.src)) }, 'Original image restored.')} className="ml-3 text-xs text-slate-300 hover:text-white">Restore original</button>}
+                  <button onClick={() => replaceImageWithUrl(image.id)} className="ml-3 text-xs text-amber-300 hover:text-amber-200">Use image URL</button>
+                  {draft.imageOverrides[image.id] && <button onClick={() => persist({ ...draft, imageOverrides: Object.fromEntries(Object.entries(draft.imageOverrides).filter(([key]) => key !== image.id)) }, 'Original image restored.')} className="ml-3 text-xs text-slate-300 hover:text-white">Restore original</button>}
                 </div>
               </article>
             ))}
+              </div>
+            </div>)}
           </div>
         </section>
 
@@ -233,7 +239,7 @@ export const AdminPage: React.FC<{ onExit: () => void }> = ({ onExit }) => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[...visibleDefaultGallery, ...draft.galleryAdditions].map((image) => {
               const custom = image.id.startsWith('custom-');
-              return <article key={image.id} className="group relative rounded-xl overflow-hidden border border-white/10"><img src={draft.imageOverrides[image.src] || image.src} alt={image.alt} className="aspect-square w-full object-cover" referrerPolicy="no-referrer" /><div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/90 to-transparent"><p className="text-xs truncate pr-8">{image.title}</p><button onClick={() => removeGalleryPhoto(image, custom)} aria-label={`Remove ${image.title}`} className="absolute right-2 bottom-2 p-2 rounded-lg bg-red-500/80 hover:bg-red-500"><Trash2 className="w-4 h-4" /></button></div></article>;
+              return <article key={image.id} className="rounded-xl overflow-hidden border border-white/10 bg-white/5"><img src={draft.imageOverrides[`gallery-${image.id}`] || draft.imageOverrides[image.src] || image.src} alt={image.alt} className="aspect-square w-full object-cover" referrerPolicy="no-referrer" /><div className="p-3"><p className="text-xs truncate mb-3">{image.title}</p><div className="flex gap-2"><label className="cursor-pointer rounded-lg bg-amber-400 text-slate-950 font-bold text-xs px-3 py-2">Replace<input type="file" accept="image/*" className="sr-only" disabled={Boolean(busyKey)} onChange={(e) => replaceImage(`gallery-${image.id}`, e.target.files?.[0])} /></label><button onClick={() => replaceImageWithUrl(`gallery-${image.id}`)} className="text-xs text-amber-300">Use URL</button><button onClick={() => removeGalleryPhoto(image, custom)} aria-label={`Remove ${image.title}`} className="ml-auto p-2 rounded-lg bg-red-500/80 hover:bg-red-500"><Trash2 className="w-4 h-4" /></button></div></div></article>;
             })}
           </div>
         </section>

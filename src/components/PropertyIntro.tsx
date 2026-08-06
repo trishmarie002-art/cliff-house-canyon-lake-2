@@ -58,7 +58,7 @@ export const PropertyIntro: React.FC = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/15 aspect-[16/10]">
               <img
-                src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg?im_w=1600"
+                src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg"
                 alt="Cliff House at Canyon Lake exterior and deck view"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -80,7 +80,7 @@ export const PropertyIntro: React.FC = () => {
             {/* Floating Overlapping Small Image */}
             <div className="hidden sm:block absolute -bottom-8 -left-8 w-48 h-48 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-2xl z-10">
               <img
-                src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg?im_w=1600"
+                src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg"
                 alt="Cliff House outdoor hot tub view"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

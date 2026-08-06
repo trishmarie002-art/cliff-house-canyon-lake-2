@@ -8,6 +8,7 @@ export const StoryHighlights: React.FC = () => {
   const stories = [
     {
       id: "waterfront-access",
+      imageSlot: "experience-waterfront",
       badge: "Direct Lake Access",
       icon: Waves,
       title: "Crystal Blue Canyon Lake at Your Shoreline",
@@ -25,6 +26,7 @@ export const StoryHighlights: React.FC = () => {
     },
     {
       id: "two-decks",
+      imageSlot: "experience-decks",
       badge: "Outdoor Living & Sunset Views",
       icon: Sun,
       title: "Two Scenic Decks Framed by Endless Horizons",
@@ -42,6 +44,7 @@ export const StoryHighlights: React.FC = () => {
     },
     {
       id: "hot-tub",
+      imageSlot: "experience-hot-tub",
       badge: "Private Cliffside Spa",
       icon: Sparkles,
       title: "Stargazing Hot Tub Perched Over the Lake",
@@ -59,6 +62,7 @@ export const StoryHighlights: React.FC = () => {
     },
     {
       id: "firepit-grill",
+      imageSlot: "experience-firepit",
       badge: "Firepit & Barbecue Station",
       icon: Flame,
       title: "Waterfront Firepit & Outdoor Grill Station",
@@ -146,7 +150,7 @@ export const StoryHighlights: React.FC = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#0d2238]/10 group">
                   <img
-                    src={imageFor(story.image)}
+                    src={imageFor(story.imageSlot, story.image)}
                     alt={story.imageAlt}
                     className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"

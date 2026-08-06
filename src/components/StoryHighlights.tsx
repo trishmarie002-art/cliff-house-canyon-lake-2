@@ -17,7 +17,7 @@ export const StoryHighlights: React.FC = () => {
         "Minutes from Canyon Lake Marina & boat launching ramps",
         "Paddleboards and water floats available for guests"
       ],
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+      image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg?im_w=1600",
       imageAlt: "Direct lake water access at Canyon Lake",
       reversed: false,
     },
@@ -34,7 +34,7 @@ export const StoryHighlights: React.FC = () => {
         "Lounge armchairs & coffee table for quiet mornings",
         "Covered shade areas for comfortable afternoon lounging"
       ],
-      image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80",
+      image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg?im_w=1600",
       imageAlt: "Upper deck at Cliff House overlooking Canyon Lake sunset",
       reversed: true,
     },
@@ -51,7 +51,7 @@ export const StoryHighlights: React.FC = () => {
         "Surrounded by cedar trees and panoramic lake views",
         "Privately positioned on the lower secluded deck"
       ],
-      image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1600&q=80",
+      image: "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a675ff01-d780-4db9-a590-f66aec4459c4.jpeg?im_w=1600",
       imageAlt: "Private hot tub at Cliff House with lake view",
       reversed: false,
     },
@@ -68,7 +68,7 @@ export const StoryHighlights: React.FC = () => {
         "Outdoor string lights creating a magical night vibe",
         "Complementary fire wood starter kit provided"
       ],
-      image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1600&q=80",
+      image: "https://a0.muscache.com/im/pictures/miso/Hosting-1040656905837979838/original/b9b036ac-f18c-46c2-a271-e34f7ff98c16.jpeg?im_w=1600",
       imageAlt: "Waterfront firepit and outdoor grill area",
       reversed: true,
     }

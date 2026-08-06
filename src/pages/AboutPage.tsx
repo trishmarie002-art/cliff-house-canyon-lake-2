@@ -50,8 +50,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAirbnb }) => {
           <div className="lg:col-span-5 relative">
             <div className="rounded-2xl overflow-hidden border border-amber-400/30 shadow-2xl aspect-square relative">
               <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80"
-                alt="Superhost Richard at Canyon Lake"
+                src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg?im_w=1600"
+                alt="Cliff House at Canyon Lake waterfront property"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

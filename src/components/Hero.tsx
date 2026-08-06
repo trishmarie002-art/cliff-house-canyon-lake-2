@@ -10,8 +10,8 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenAirbnb, ambiance }) => {
   const bgImage = ambiance === 'sunset'
-    ? 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/de20e643-2eab-4685-b377-39519e624764.jpeg'
-    : 'https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTA0MDY1NjkwNTgzNzk3OTgzOA%3D%3D/original/a73c509d-2758-4898-914c-65fa01cf3459.jpeg';
+    ? 'https://lh3.googleusercontent.com/pw/AP1GczMvwXt4uhGX5rgx_sFDI1dSMmpfXrodCt_7lYV5mLmv-kepNvqp1QqQIKkvABD5XR7ImroYEdZofV2jLvJ-LjxmQllfsFNOORUlpJ49zSXeNbcLfqw=w1600'
+    : 'https://lh3.googleusercontent.com/pw/AP1GczO_KkzDH1ir-bZ_E5BsMHLZ6yPT1-_TcWtU74XkzhKS0qP3XyMHBDZYOBM0-nq18L5ee4zDPHGLKamuDwMexn88051BuKHiIrfn1PxBlc-3a7--Uus=w1600';
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">

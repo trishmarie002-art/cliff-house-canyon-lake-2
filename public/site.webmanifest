@@ -1,0 +1,17 @@
+{
+  "name": "Cliff House at Canyon Lake",
+  "short_name": "Cliff House",
+  "description": "Waterfront vacation rental at Canyon Lake, Texas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://pub-a35884625cfe400d9088764a7f0e49e0.r2.dev/Cliffhouse/cliffhouselogo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

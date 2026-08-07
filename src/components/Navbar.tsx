@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ExternalLink, Menu, X, Star, Compass } from 'lucide-react';
+import { ExternalLink, Menu, X, Star } from 'lucide-react';
 import { PROPERTY_INFO } from '../data/propertyData';
 import { PageTab } from '../types';
 
@@ -13,8 +13,6 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenAirbnb,
-  ambiance,
-  setAmbiance,
   activeTab,
   onNavigate,
 }) => {
@@ -48,8 +46,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || activeTab !== 'home'
-          ? 'bg-white/95 backdrop-blur-md shadow-xl py-3 border-b border-slate-200'
-          : 'bg-white/95 backdrop-blur-md shadow-lg py-3 border-b border-slate-200'
+          ? 'bg-white shadow-xl py-2 border-b border-slate-200'
+          : 'bg-white shadow-lg py-2 border-b border-slate-200'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -61,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <img
             src="https://pub-a35884625cfe400d9088764a7f0e49e0.r2.dev/Cliffhouse/cliffhouselogo.png"
             alt="Cliff House at Canyon Lake"
-            className="h-12 sm:h-14 w-auto max-w-[190px] object-contain"
+            className="h-14 sm:h-20 w-auto max-w-[210px] sm:max-w-[280px] object-contain"
           />
         </button>
 
@@ -85,17 +83,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           })}
         </nav>
 
-        {/* Ambiance Toggle & Airbnb CTA */}
+        {/* Airbnb CTA */}
         <div className="hidden sm:flex items-center space-x-3">
-          <button
-            onClick={() => setAmbiance(ambiance === 'day' ? 'sunset' : 'day')}
-            title="Toggle Atmosphere View"
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs text-slate-700 transition-all cursor-pointer"
-          >
-            <Compass className="w-3.5 h-3.5 text-amber-300" />
-            <span>{ambiance === 'day' ? 'Daylight' : 'Sunset Glow'}</span>
-          </button>
-
           <button
             onClick={onOpenAirbnb}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
@@ -125,18 +114,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-4 pt-4 pb-6 space-y-3 animate-in slide-in-from-top duration-300">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-4 pb-6 space-y-3 animate-in slide-in-from-top duration-300">
+          <div className="flex items-center pb-3 border-b border-slate-200">
             <div className="flex items-center gap-2 text-amber-700 text-xs font-medium">
               <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
               <span>{PROPERTY_INFO.rating} ({PROPERTY_INFO.reviewCount} Reviews) • Superhost</span>
             </div>
-            <button
-              onClick={() => setAmbiance(ambiance === 'day' ? 'sunset' : 'day')}
-              className="text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-700 cursor-pointer"
-            >
-              {ambiance === 'day' ? '☀️ Day' : '🌅 Sunset'}
-            </button>
           </div>
 
           <div className="grid grid-cols-2 gap-2 pt-1">

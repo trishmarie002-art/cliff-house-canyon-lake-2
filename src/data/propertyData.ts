@@ -216,48 +216,8 @@ export const AMENITIES_DATA: AmenityCategory[] = [
   }
 ];
 
-export const REVIEWS_DATA: ReviewItem[] = [
-  {
-    id: "rev-1",
-    author: "Sarah M.",
-    location: "Austin, Texas",
-    date: "July 2026",
-    rating: 5,
-    comment: "Cliff House is absolute paradise! The views from the upper deck during sunset take your breath away. We brought our family of 8 and there was so much space for everyone. The hot tub at night under the stars overlooking Canyon Lake was the highlight of our summer!",
-    stayDate: "Stayed 4 nights",
-    tags: ["Family Trip", "Unbeatable Lake Views", "Hot Tub"]
-  },
-  {
-    id: "rev-2",
-    author: "David & Rachel K.",
-    location: "Houston, Texas",
-    date: "June 2026",
-    rating: 5,
-    comment: "Richard is truly a Superhost. Check-in was seamless, the home was immaculate, and every little detail was thought of—from the coffee bar to the firepit wood. Watching the sunrise from bed in the master suite was unforgettable.",
-    stayDate: "Stayed 3 nights",
-    tags: ["Superhost Richard", "Couples Retreat", "Clean & Immaculate"]
-  },
-  {
-    id: "rev-3",
-    author: "Marcus T.",
-    location: "Dallas, Texas",
-    date: "May 2026",
-    rating: 5,
-    comment: "We rented Cliff House for a weekend friend reunion. The layout is perfect for 10 people—7 beds made sleeping arrangements so comfortable. We grilled out every evening on the deck and swam in the lake during the day. We are already booking our next stay!",
-    stayDate: "Stayed 3 nights",
-    tags: ["Friends Reunion", "Barbecue & Grill", "Spacious Layout"]
-  },
-  {
-    id: "rev-4",
-    author: "Elena P.",
-    location: "San Antonio, Texas",
-    date: "April 2026",
-    rating: 5,
-    comment: "If you want the best lake view in Canyon Lake, this is it. The multi-tiered decks give you 180-degree water views. Perfect location near Whitewater Amphitheater and Guadalupe River tubing too!",
-    stayDate: "Stayed 2 nights",
-    tags: ["Location", "Sunset Decks", "Waterfront Access"]
-  }
-];
+// Individual review text remains on Airbnb so the site never displays invented or stale quotes.
+export const REVIEWS_DATA: ReviewItem[] = [];
 
 export const AREA_ATTRACTIONS: AreaAttraction[] = [
   {
@@ -305,15 +265,15 @@ export const AREA_ATTRACTIONS: AreaAttraction[] = [
 export const FAQS = [
   {
     q: "What is the guest capacity and sleeping layout?",
-    a: "Cliff House comfortably accommodates up to 10 guests across 3 spacious bedrooms with a total of 7 beds (King master bedroom, Queen + Twin room, and a bunk suite with Queen, Bunks, and Trundle), plus 2.5 bathrooms."
+    a: "The Airbnb listing confirms that Cliff House accommodates up to 10 guests and has 3 bedrooms, 7 beds, and 2.5 bathrooms. View the Airbnb listing for the current room-by-room sleeping arrangement."
   },
   {
     q: "How does check-in work?",
-    a: "Check-in is keyless and seamless! You will receive a unique smart lock access code 24 hours prior to check-in. Standard check-in is at 4:00 PM and check-out is at 11:00 AM."
+    a: "The home offers self check-in with a smart lock. The Airbnb listing states check-in is after 4:00 PM and checkout is before 11:00 AM. Airbnb and the host will provide reservation-specific arrival instructions."
   },
   {
     q: "Is there direct water access?",
-    a: "Yes! Cliff House sits directly on the limestone shoreline of Canyon Lake. Steps lead down from the lower firepit deck directly to the water for swimming, paddleboarding, or relaxing."
+    a: "The Airbnb listing identifies the home as waterfront and right on Canyon Lake. Please review the listing and the host's arrival guidance for current shoreline conditions and safe access details."
   },
   {
     q: "How do I check dates and complete a booking?",
@@ -322,5 +282,29 @@ export const FAQS = [
   {
     q: "What is your W.O.R.D. permit status?",
     a: "Cliff House operates in full compliance with local Texas Hill Country regulations under Water Orientated Recreation District of Comal County Permit #L1891."
+  },
+  {
+    q: "What amenities are confirmed on the Airbnb listing?",
+    a: "The listing confirms a kitchen, Wi-Fi, free parking on the premises, a hot tub, two decks, a grill station, and a firepit overlooking the lake. Airbnb currently lists 45 amenities; open the official listing to see the complete, current list."
+  },
+  {
+    q: "Are pets allowed?",
+    a: "The public Airbnb page does not show a pet policy in the information available here. Please check the current house rules on Airbnb or message host Richard before booking."
+  },
+  {
+    q: "What are the parking rules?",
+    a: "The Airbnb listing confirms free parking on the premises, but it does not state a vehicle limit on the public page. Confirm the number and type of vehicles with the host through Airbnb before arrival."
+  },
+  {
+    q: "What are the quiet hours and party rules?",
+    a: "The public Airbnb page does not display those detailed house rules. Review the current house rules during booking and contact host Richard through Airbnb if you need clarification. The confirmed maximum occupancy is 10 guests."
+  },
+  {
+    q: "Who hosts Cliff House?",
+    a: "Cliff House is hosted by Richard, an Airbnb Superhost with three years of hosting experience. The listing shows a 100% response rate and says he responds within an hour."
+  },
+  {
+    q: "What safety information does Airbnb show?",
+    a: "Airbnb shows a smoke alarm and states that a carbon monoxide alarm has not been reported. Review the complete Safety & property section on Airbnb before booking."
   }
 ];

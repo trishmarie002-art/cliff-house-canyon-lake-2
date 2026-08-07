@@ -47,7 +47,7 @@ export const ReviewsSection: React.FC = () => {
                   <span>Hosted by Richard • Airbnb Superhost</span>
                 </div>
                 <p className="text-xs text-slate-200 font-light leading-relaxed">
-                  Superhosts are experienced, highly rated hosts committed to providing outstanding stays for guests. Richard responds within minutes to all guest inquiries.
+                  Superhosts are experienced, highly rated hosts committed to providing outstanding stays for guests. Airbnb says Richard responds within an hour.
                 </p>
               </div>
             </div>
@@ -108,6 +108,11 @@ export const ReviewsSection: React.FC = () => {
               </div>
             </motion.div>
           ))}
+          {REVIEWS_DATA.length === 0 && (
+            <div className="md:col-span-2 rounded-3xl bg-white border border-slate-200 p-8 text-center shadow-lg">
+              <p className="text-slate-700">Individual guest reviews are kept on the official Airbnb listing so visitors always see the current, verified versions.</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

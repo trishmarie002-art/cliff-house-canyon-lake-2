@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAirbnb, onNavigate }) => {
               <img
                 src="https://pub-a35884625cfe400d9088764a7f0e49e0.r2.dev/Cliffhouse/cliffhouselogo.png"
                 alt="Cliff House at Canyon Lake"
-                className="h-16 w-auto max-w-[220px] object-contain"
+                className="h-24 sm:h-28 w-auto max-w-[300px] sm:max-w-[340px] object-contain"
               />
             </div>
 

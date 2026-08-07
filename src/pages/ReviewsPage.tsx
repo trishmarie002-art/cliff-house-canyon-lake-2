@@ -10,10 +10,6 @@ interface ReviewsPageProps {
 export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
   const [selectedTag, setSelectedTag] = useState<string>('all');
   const [helpfulCounts, setHelpfulCounts] = useState<Record<string, number>>({});
-  const [storyModalOpen, setStoryModalOpen] = useState(false);
-  const [guestName, setGuestName] = useState('');
-  const [guestComment, setGuestComment] = useState('');
-  const [storySubmitted, setStorySubmitted] = useState(false);
 
   const allTags = ['all', 'Family Trip', 'Sunset Decks', 'Superhost Richard', 'Hot Tub', 'Couples Retreat'];
 
@@ -26,19 +22,6 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
       ...prev,
       [id]: (prev[id] || 0) + 1,
     }));
-  };
-
-  const handleStorySubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (guestName && guestComment) {
-      setStorySubmitted(true);
-      setTimeout(() => {
-        setStoryModalOpen(false);
-        setStorySubmitted(false);
-        setGuestName('');
-        setGuestComment('');
-      }, 2000);
-    }
   };
 
   return (
@@ -85,10 +68,10 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
             </div>
             <div>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/15 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2">
-                <Award className="w-3.5 h-3.5" /> Superhost 100% Recommended
+                <Award className="w-3.5 h-3.5" /> Airbnb Superhost
               </span>
               <h2 className="font-serif-heading text-2xl font-bold text-white">98 Verified Airbnb Reviews</h2>
-              <p className="text-xs text-slate-300 mt-1">Guest Favorite • Top 5% of all Airbnb properties worldwide</p>
+              <p className="text-xs text-slate-300 mt-1">Guest Favorite on Airbnb</p>
             </div>
           </div>
 
@@ -96,7 +79,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
               <span className="text-slate-400 block mb-1">Cleanliness</span>
-              <span className="font-serif text-lg font-bold text-amber-300">5.0 ★</span>
+              <span className="font-serif text-lg font-bold text-amber-300">4.9 ★</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
               <span className="text-slate-400 block mb-1">Accuracy</span>
@@ -108,7 +91,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
               <span className="text-slate-400 block mb-1">Location</span>
-              <span className="font-serif text-lg font-bold text-amber-300">5.0 ★</span>
+              <span className="font-serif text-lg font-bold text-amber-300">4.9 ★</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
               <span className="text-slate-400 block mb-1">Check-in</span>
@@ -116,7 +99,7 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
               <span className="text-slate-400 block mb-1">Value</span>
-              <span className="font-serif text-lg font-bold text-amber-300">4.9 ★</span>
+              <span className="font-serif text-lg font-bold text-amber-300">4.8 ★</span>
             </div>
           </div>
         </div>
@@ -141,11 +124,11 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
           </div>
 
           <button
-            onClick={() => setStoryModalOpen(true)}
+            onClick={onOpenAirbnb}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-amber-300 text-xs font-semibold transition-all cursor-pointer"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>Submit Guest Memory</span>
+            <span>View All Reviews on Airbnb</span>
           </button>
         </div>
 
@@ -212,6 +195,14 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
               </div>
             </motion.div>
           ))}
+          {filteredReviews.length === 0 && (
+            <div className="md:col-span-2 glass-panel rounded-3xl p-8 text-center border border-white/15">
+              <p className="text-slate-300 mb-5">Read all 98 verified guest reviews and the latest review details on the official Airbnb listing.</p>
+              <button onClick={onOpenAirbnb} className="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm cursor-pointer">
+                View Verified Airbnb Reviews
+              </button>
+            </div>
+          )}
         </div>
 
         {/* CTA Banner */}
@@ -235,71 +226,6 @@ export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenAirbnb }) => {
         </div>
       </div>
 
-      {/* Guest Memory Submission Modal */}
-      {storyModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-[#0d2238] border border-amber-400/30 rounded-3xl p-8 max-w-md w-full shadow-2xl relative text-slate-100"
-          >
-            <h3 className="font-serif-heading text-2xl font-bold text-white mb-2">Share Your Cliff House Story</h3>
-            <p className="text-xs text-slate-300 mb-6">
-              Have a favorite moment from your stay? Submit your story or memory to Superhost Richard!
-            </p>
-
-            {storySubmitted ? (
-              <div className="py-8 text-center space-y-3">
-                <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
-                <h4 className="font-serif text-xl text-white">Thank You!</h4>
-                <p className="text-xs text-slate-300">Your note was received and shared with host Richard.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleStorySubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Your Name & Location</label>
-                  <input
-                    type="text"
-                    required
-                    value={guestName}
-                    onChange={(e) => setGuestName(e.target.value)}
-                    placeholder="e.g., Sarah M. from Austin, TX"
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Your Highlight or Memory</label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={guestComment}
-                    onChange={(e) => setGuestComment(e.target.value)}
-                    placeholder="What made your stay at Canyon Lake special?"
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 resize-none"
-                  />
-                </div>
-
-                <div className="flex gap-3 pt-2">
-                  <button
-                    type="button"
-                    onClick={() => setStoryModalOpen(false)}
-                    className="w-1/2 py-2.5 rounded-xl bg-white/10 text-slate-300 hover:bg-white/20 text-xs font-semibold cursor-pointer"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="w-1/2 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-lg cursor-pointer"
-                  >
-                    Send Memory
-                  </button>
-                </div>
-              </form>
-            )}
-          </motion.div>
-        </div>
-      )}
     </div>
   );
 };

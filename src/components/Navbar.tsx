@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <img
             src="https://pub-a35884625cfe400d9088764a7f0e49e0.r2.dev/Cliffhouse/cliffhouselogo.png"
             alt="Cliff House at Canyon Lake"
-            className="h-14 sm:h-20 w-auto max-w-[210px] sm:max-w-[280px] object-contain"
+            className="h-[72px] sm:h-20 w-auto max-w-[230px] sm:max-w-[280px] object-contain"
           />
         </button>
 
